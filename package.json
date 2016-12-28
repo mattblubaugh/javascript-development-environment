@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
+    "prestart" : "node buildScripts/preStartMessage.js",
+    "start" : "npm-run-all --parallel security-check open:src",
+    "poststart" : "node buildScripts/postStartMessage.js",
+    "open:src" : "node buildScripts/srcServer.js",
+    "security-check" : "nsp check",
+    "share": "npm-run-all --parallel start share:localtunnel",
+    "share:localtunnel" : "lt --port 3000 --subdomain mjbneat" 
   },
   "author": "Matt Blubaugh",
   "license": "MIT",
