@@ -4,14 +4,16 @@
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
     "prestart" : "babel-node buildScripts/preStartMessage.js",
-    "start" : "npm-run-all --parallel security-check open:src lint:watch",
+    "start" : "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "poststart" : "babel-node buildScripts/postStartMessage.js",
     "open:src" : "babel-node buildScripts/srcServer.js",
     "security-check" : "nsp check",
     "share": "npm-run-all --parallel start share:localtunnel",
     "share:localtunnel" : "lt --port 3000 --subdomain mjbneat",
     "lint": "esw webpack.config.* src buildScripts --color",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter nyan buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Matt Blubaugh",
   "license": "MIT",
