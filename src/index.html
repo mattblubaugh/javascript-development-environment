@@ -1,6 +1,20 @@
+<!-- 
+  **NOTE** This is a template for index.html.
+  It uses ejs and htmlWebpackPlugin to generate a differente index.html for each environment.
+  htmlWebpackPlugin will dynamically add references t othe scripts and styles that it bundles
+  to this file. The generated bundles have has-based filenames,
+  so it's necessary to add the references dynamically.
+  For more info on enjs see http://www.embeddedjs.com/.
+  For examples of using it with htmlWebpackPlugin,
+  see https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs
+  -->
 <!doctype html>
 <html lang="en">
   <head>
+    <% if (htmlWebpackPlugin.options.sentryJsToken) { %>
+      <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js" crossorigin="anonymous"></script>
+      <script>Raven.config('<%=htmlWebpackPlugin.options.sentryJsToken%>').install();</script>
+    <% } %>
     <meta charset="UTF-8">
   </head>
   <body>
@@ -17,6 +31,5 @@
         
       </tbody>
     </table>
-    <script src="bundle.js"></script>
   </body>
 </html>
