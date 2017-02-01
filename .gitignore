@@ -2,6 +2,7 @@ node_modules
 vendor/*
 !vendor/.gitkeep
 npm-debug.*
+.vscode
 
 .env
 
