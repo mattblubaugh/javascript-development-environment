@@ -1,0 +1,46 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    timezone: America/New_York
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: css-loader
+    versions:
+    - 0.28.11
+    - 5.0.2
+    - 5.1.0
+    - 5.1.1
+    - 5.1.2
+    - 5.1.3
+    - 5.2.0
+    - 5.2.1
+    - 5.2.2
+  - dependency-name: open
+    versions:
+    - 7.3.1
+    - 7.4.0
+    - 7.4.1
+    - 7.4.2
+    - 8.0.2
+    - 8.0.3
+    - 8.0.4
+    - 8.0.5
+    - 8.0.6
+  - dependency-name: jsdom
+    versions:
+    - 16.4.0
+    - 16.5.0
+    - 16.5.1
+    - 16.5.2
+  - dependency-name: chalk
+    versions:
+    - 4.1.0
+  - dependency-name: webpack-dev-middleware
+    versions:
+    - 1.12.2
+  - dependency-name: style-loader
+    versions:
+    - 0.23.1
